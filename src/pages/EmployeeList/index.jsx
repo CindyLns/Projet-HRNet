@@ -5,12 +5,15 @@ function EmployeeList() {
 
     return (
         <div id="employee-div" className="container">
-            <h1>Current Employees</h1>
+            <h1 className="h2">Current Employees</h1>
             <table id="employee-table" className="display"></table>
-            <a href="#" onClick={(e) => {
+            <a className="link" href="#" onClick={(e) => {
                 e.preventDefault();
                 navigate('/');
-            }}>Home</a>
+            }}>
+            <i className="fa-solid fa-arrow-left"></i>
+            Home
+            </a>
 
 
       </div>
