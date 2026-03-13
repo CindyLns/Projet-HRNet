@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import DataTables from "../../components/DataTables";
 
 function EmployeeList() {
     const navigate = useNavigate();
@@ -6,7 +7,7 @@ function EmployeeList() {
     return (
         <div id="employee-div" className="container">
             <h1 className="h2">Current Employees</h1>
-            <table id="employee-table" className="display"></table>
+            <DataTables />
             <a className="link" href="#" onClick={(e) => {
                 e.preventDefault();
                 navigate('/');
@@ -14,8 +15,6 @@ function EmployeeList() {
             <i className="fa-solid fa-arrow-left"></i>
             Home
             </a>
-
-
       </div>
     )
 }

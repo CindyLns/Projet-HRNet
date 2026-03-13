@@ -110,3 +110,48 @@ button {
 button:hover {
     background-color: #2ebaa9;
 }
+
+/******* Current Employees Page *******/
+
+.dataTables_wrapper input, .dataTables_wrapper select {
+    color:#045258;
+    border: 3px solid #EEF2F3;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+}
+
+.dataTables_top,
+.dataTables_bottom {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dataTables_top label {
+    font-weight: 500;
+}
+.dataTables_top .dataTables_length select {
+    margin-left: 0.25em;
+}
+.dataTables_top .dataTables_filter input {
+    margin-left: 0.5em;
+}
+
+.employee-table {
+    border-bottom: 1px solid #045258;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.employee-table th{
+    border-bottom: 1px solid #045258;
+}
+.employee-table th,
+.employee-table td {
+    cursor: pointer;
+    padding: 0.625rem 1.125rem;
+}
