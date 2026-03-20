@@ -1,13 +1,16 @@
 import statesData from '../../datas/states.json'
 import { useState } from "react";   
 
-function SelectMenu({ label,  id }) {
+function SelectMenu({ label,  id, optionChange }) {
     const [state, setState] = useState ("")
 
     return (
         <div className="select-menu">
             <label htmlFor={label}>{label}</label>
-            <select name={id} id={id} value={state} onChange={(e) => setState(e.target.value)}>
+            <select name={id} id={id} value={state} onChange={(e) => {
+                setState(e.target.value); 
+                optionChange(e.target.value);  
+            }}>
                 {statesData.map((option, index) => (
                     <option key={index} value={option.name}>{option.name}</option>
                 ))}

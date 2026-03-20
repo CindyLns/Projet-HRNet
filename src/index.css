@@ -98,12 +98,14 @@ legend {
     font-weight: 500;
 }
 button {
+    display: flex;
     background-color: #045258;
     color: white;
     font-weight: 700;
     border-radius: 2px;
     border: none;
     padding: 0.5rem 1rem;
+    margin: 1.5rem auto 0 auto;
     font-family: "Raleway", sans-serif;
     cursor: pointer;
 }

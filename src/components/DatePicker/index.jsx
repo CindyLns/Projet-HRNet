@@ -1,7 +1,7 @@
 import { useState } from "react";   
 
 
-function DatePicker({ label, id }) {
+function DatePicker({ label, id, dateChange }) {
     const [date, setDate] = useState("");
 
     return (
@@ -11,7 +11,10 @@ function DatePicker({ label, id }) {
                 type="date" 
                 id={id} 
                 value={date}
-                onChange={(e) => setDate(e.target.value)}
+                onChange={(e) => {
+                    setDate(e.target.value);
+                    dateChange(e.target.value);
+                }}
             />
         </div>
     )

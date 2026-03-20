@@ -1,8 +1,11 @@
 import { useState } from "react";   
+import { useSelector } from "react-redux";
 
 
 function DataTables() {
    const [entries, setEntries] = useState("")
+   const employees = useSelector((state) => state.employee);
+
 
     return (
         <div className="dataTables_wrapper">
@@ -34,9 +37,19 @@ function DataTables() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr role="row" className="odd">
-                        <td className="sorting_1">Tiger</td>
-                    </tr>
+                    {employees.map((employee, index) => (
+                        <tr key={index} role="row" className="odd">
+                            <td className="sorting">{employee.firstName}</td>
+                            <td className="sorting">{employee.lastName}</td>
+                            <td className="sorting">{employee.startDate}</td>
+                            <td className="sorting">{employee.department}</td>
+                            <td className="sorting">{employee.dateOfBirth}</td>
+                            <td className="sorting">{employee.street}</td>
+                            <td className="sorting">{employee.city}</td>
+                            <td className="sorting">{employee.country}</td>
+                            <td className="sorting">{employee.zipCode}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
             <div className="dataTables_bottom">
