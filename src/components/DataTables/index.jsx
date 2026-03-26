@@ -3,9 +3,24 @@ import { useSelector } from "react-redux";
 
 
 function DataTables() {
-   const [entries, setEntries] = useState("")
+   const [entries, setEntries] = useState("10");
    const employees = useSelector((state) => state.employee);
+   const [searchTerm, setSearchTerm] = useState('')
 
+   const filteredEmployees = employees.filter((employee) => {
+    const term = searchTerm.toLowerCase();
+    return (
+      employee.firstName?.toLowerCase().includes(term) ||
+      employee.lastName?.toLowerCase().includes(term) ||
+      employee.department?.toLowerCase().includes(term) ||
+      employee.city?.toLowerCase().includes(term) ||
+      employee.country?.toLowerCase().includes(term) ||
+      employee.street?.toLowerCase().includes(term) ||
+      employee.zipCode?.toLowerCase().includes(term) ||
+      employee.startDate?.toLowerCase().includes(term) ||
+      employee.dateOfBirth?.toLowerCase().includes(term)
+    );
+  });
 
     return (
         <div className="dataTables_wrapper">
@@ -20,7 +35,12 @@ function DataTables() {
                         </select> entries
                     </label>
                 </div>
-                <div className="dataTables_filter"><label htmlFor="employee-table_filter">Search:<input type="search" className="" placeholder="" aria-controls="employee-table"/></label></div>
+                <div className="dataTables_filter">
+                    <label htmlFor="employee-table_filter">
+                        Search:
+                        <input type="search" name="search" placeholder="" aria-controls="employee-table"  value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
+                    </label>
+                </div>
             </div>
             <table className="employee-table">
                 <thead>
@@ -37,7 +57,7 @@ function DataTables() {
                     </tr>
                 </thead>
                 <tbody>
-                    {employees.map((employee, index) => (
+                    {filteredEmployees.map((employee, index) => (
                         <tr key={index} role="row" className="odd">
                             <td className="sorting">{employee.firstName}</td>
                             <td className="sorting">{employee.lastName}</td>
