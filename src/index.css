@@ -157,3 +157,54 @@ button:hover {
     cursor: pointer;
     padding: 0.625rem 1.125rem;
 }
+.dataTables_heading {
+    position: relative;
+}
+
+.icon_caret {
+    position: absolute;
+    top: 45%;
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+.fa-solid.fa-caret-up,
+.fa-solid.fa-caret-down {
+    color: rgba(4, 82, 88, 0.3);
+    line-height: 4px;
+    font-size: 0.75rem;
+}
+
+.color_active {
+    color: #045258 !important;
+}
+.dataTables_paginate {
+    display: flex;
+    align-items: center;
+}
+.number_pages {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.paginate_button{
+    margin-top: 0;
+    min-width: 1.5em;
+    padding: 0.5em 1em;
+    margin-left: 2px;
+    text-align: center;
+    text-decoration: none;
+}
+.paginate_button.previous,
+.paginate_button.next {
+    color:#045258;
+}
+.paginate_button.previous.disabled,
+.paginate_button.next.disabled {
+    color: rgba(4, 82, 88, 0.3);
+}
+.number_pages .paginate_button:not(.current) {
+    background-color: transparent;
+    color: #045258;
+}
